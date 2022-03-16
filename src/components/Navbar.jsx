@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // import { SearchOutlinedIcon } from "@mui/icons-material/SearchOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { SearchOutlined, ShoppingCartOutlined } from "@material-ui/icons";
 
 function Navbar() {
   const Container = styled.div`
@@ -15,36 +15,48 @@ function Navbar() {
     height: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   `;
 
   const Left = styled.div`
     width: 33.33%;
-    background-color: red;
+    /* background-color: red; */
     flex: 1;
   `;
 
   const Center = styled.div`
     width: 33.33%;
-    background-color: orange;
+    /* background-color: orange; */
     display: flex;
     flex: 2;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     .logo {
       font-size: 20px;
       font-weight: bold;
     }
+  `;
 
+  const SearchContainer = styled.div`
+    background-color: grey;
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
     .input {
       border: 0;
+      width: 70%;
+      padding: 10px 20px;
       /* border-radius: 30px; */
     }
   `;
 
   const Right = styled.div`
     width: 33.33%;
-    background-color: green;
+    /* background-color: green; */
 
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-between;
     flex: 1;
   `;
 
@@ -62,11 +74,19 @@ function Navbar() {
         </Left>
         <Center>
           <div className="logo">React</div>
-          <input type="text" className="input" />
+          <SearchContainer>
+            <input type="text" className="input" />
+            <MenuItem>
+              <SearchOutlined></SearchOutlined>
+            </MenuItem>
+          </SearchContainer>
         </Center>
         <Right>
           <MenuItem>Register</MenuItem>
           <MenuItem>Login</MenuItem>
+          <MenuItem>
+            <ShoppingCartOutlined></ShoppingCartOutlined>
+          </MenuItem>
         </Right>
       </Wrapper>
     </Container>
