@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 // import { SearchOutlinedIcon } from "@mui/icons-material/SearchOutlined";
-import { SearchOutlined, ShoppingCartOutlined } from "@material-ui/icons";
+import {
+  SearchOutlined,
+  ShoppingCartOutlined,
+  ArrowDropDownOutlined,
+} from "@material-ui/icons";
 
 function Navbar() {
   const Container = styled.div`
@@ -22,6 +26,15 @@ function Navbar() {
     width: 33.33%;
     /* background-color: red; */
     flex: 1;
+    display: flex;
+
+    span {
+      cursor: pointer;
+    }
+
+    .arrow {
+      cursor: pointer;
+    }
   `;
 
   const Center = styled.div`
@@ -32,20 +45,25 @@ function Navbar() {
     justify-content: space-between;
 
     .logo {
-      font-size: 20px;
+      font-size: 30px;
       font-weight: bold;
     }
   `;
 
   const SearchContainer = styled.div`
-    background-color: grey;
+    background-color: #fff;
     width: 70%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding: 0 15px;
+
     .input {
       border: 0;
       width: 70%;
       padding: 10px 20px;
+      outline: 0;
       /* border-radius: 30px; */
     }
   `;
@@ -58,10 +76,12 @@ function Navbar() {
     justify-content: flex-end;
     justify-content: space-between;
     flex: 1;
+    padding: 0 10px;
   `;
 
   const MenuItem = styled.div`
-    font-size: 18px;
+    font-size: 20px;
+
     cursor: pointer;
   `;
 
@@ -70,7 +90,7 @@ function Navbar() {
       <Wrapper>
         <Left>
           <span>EN</span>
-          {/* <SearchOutlinedIcon></SearchOutlinedIcon> */}
+          <ArrowDropDownOutlined className="arrow"></ArrowDropDownOutlined>
         </Left>
         <Center>
           <div className="logo">React</div>
