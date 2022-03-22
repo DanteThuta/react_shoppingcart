@@ -39,7 +39,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-  transform: translateX(0vw);
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -73,8 +73,16 @@ const Text = styled.div`
 `;
 
 const Slider = () => {
-  const [sliderItems, setSliderItems] = useState([]);
-  const handleClick = (direction) => {};
+  const [slideIndex, setSlideIndex] = useState(0);
+  const handleClick = (direction) => {
+    console.log("hi");
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+      console.log("hi2");
+    }
+  };
 
   return (
     <Container>
@@ -83,21 +91,20 @@ const Slider = () => {
       </Arrow>
       {/* 1st Section */}
       <Wrapper>
-        <Slide bg="f5fafd">
-          <ImageContainer>
-            <Image src={HomeImage} />
-          </ImageContainer>
-          <InfoContainer>
-            <Title>Lorem ipsum dolor sit amet consectetur.</Title>
-            <Text>
-              Lorem, iTextsum dolor sit amet consectetur adipisicing elit.
-              Exercitationem quia impedit ad laboriosam fuga.
-            </Text>
-          </InfoContainer>
-        </Slide>
+        {sliderItems.map((item) => (
+          <Slide key={item.id} bg={item.bg}>
+            <ImageContainer>
+              <Image src={item.img} />
+            </ImageContainer>
+            <InfoContainer>
+              <Title>{item.title}</Title>
+              <Text>{item.desc}</Text>
+            </InfoContainer>
+          </Slide>
+        ))}
       </Wrapper>
       {/* 2nd Section */}
-      <Wrapper>
+      {/* <Wrapper>
         <Slide>
           <ImageContainer>
             <Image src={HomeImage} />
@@ -110,9 +117,9 @@ const Slider = () => {
             </Text>
           </InfoContainer>
         </Slide>
-      </Wrapper>
+      </Wrapper> */}
       {/* 3rd Section */}
-      <Wrapper>
+      {/* <Wrapper>
         <Slide>
           <ImageContainer>
             <Image src={HomeImage} />
@@ -125,7 +132,7 @@ const Slider = () => {
             </Text>
           </InfoContainer>
         </Slide>
-      </Wrapper>
+      </Wrapper> */}
       <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowRight />
       </Arrow>
