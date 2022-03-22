@@ -1,3 +1,4 @@
+import Annoucement from "./components/Announcement";
 import logo from "./logo.svg";
 import Home from "./pages/Home";
 
