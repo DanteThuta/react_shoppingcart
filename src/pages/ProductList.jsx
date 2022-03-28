@@ -30,6 +30,8 @@ const FilterText = styled.span`
 
 const Select = styled.select`
   margin: 10px;
+  padding: 10px;
+  /* border-radius: 10px; */
 `;
 const Option = styled.option``;
 
