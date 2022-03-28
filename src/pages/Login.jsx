@@ -7,7 +7,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
       center;
   background-size: cover;
 
@@ -43,12 +43,11 @@ const Input = styled.input`
     color: teal;
   }
 `;
-const Agreement = styled.span`
-  font-size: 18px;
-  margin: 15px 10px;
-`;
+
 const Button = styled.button`
   padding: 10px 15px;
+  margin-top: 15px;
+  min-width: 40%;
   background-color: white;
   border: 2px solid teal;
   font-size: 18px;
@@ -61,6 +60,16 @@ const Button = styled.button`
   }
 `;
 
+const Link = styled.a`
+  width: 100%;
+  text-align: center;
+  margin: 15px 0px;
+  margin-top: 15px;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+`;
+
 const Login = () => {
   return (
     <Container>
@@ -68,13 +77,10 @@ const Login = () => {
         <Title>Login into your Account</Title>
         <Form>
           <Input placeholder="Email" />
-          <Input placeholder="Password" />
-
-          <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
-          </Agreement>
+          <Input type="password" placeholder="Password" />
           <Button>Login</Button>
+          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
+          <Link>CREATE A NEW ACCOUNT</Link>
         </Form>
       </Wrapper>
     </Container>
