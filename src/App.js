@@ -1,11 +1,10 @@
-import Annoucement from "./components/Announcement";
-import logo from "./logo.svg";
-import Home from "./pages/Home";
+import ProductList from "./pages/ProductList";
 
 function App() {
   return (
     <div>
-      <Home />
+      {/* <Home /> */}
+      <ProductList />
     </div>
   );
 }
