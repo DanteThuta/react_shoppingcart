@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 30px;
+  font-size: 34-px;
   text-align: center;
   margin-bottom: 30px;
 `;
@@ -57,31 +57,37 @@ const Bottom = styled.div`
 `;
 
 const Info = styled.div`
-  flex: 2;
+  flex: 3;
 
   display: flex;
   justify-content: space-between;
+
+  flex-direction: column;
 `;
 // PRODUCT SECTION
-const Product = styled.div``;
+const Product = styled.div`
+  display: flex;
+
+  justify-content: space-between;
+`;
 
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 `;
 
 const Image = styled.img`
   width: 200px;
-  height: 200px;
 `;
 
 const Detail = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
-  margin-left: 20px;
+  margin-top: 25px;
+
+  margin-left: 35px;
 `;
 
 const ProductName = styled.span``;
@@ -130,6 +136,14 @@ const PriceAmount = styled.div`
   font-size: 22px;
   font-weight: bold;
 `;
+
+const Hr = styled.hr`
+  background-color: #eee;
+  border: none;
+  height: 1px;
+  width: 80%;
+`;
+
 //SUMMARY SECTION
 const Summary = styled.div`
   flex: 1;
@@ -171,6 +185,13 @@ const SummaryButton = styled.button`
   color: white;
   border: 0;
   border-radius: 10px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: teal;
+    color: white;
+  }
 `;
 
 const Cart = () => {
@@ -206,17 +227,50 @@ const Cart = () => {
                   </ProductSize>
                 </Detail>
               </ProductDetail>
-            </Product>
-            <Price>
-              <AddPriceContainer>
-                <Remove />
-                <PriceDisplay>2</PriceDisplay>
-                <Add />
-              </AddPriceContainer>
 
-              <PriceAmount> $ 30</PriceAmount>
-            </Price>
+              <Price>
+                <AddPriceContainer>
+                  <Remove />
+                  <PriceDisplay>2</PriceDisplay>
+                  <Add />
+                </AddPriceContainer>
+
+                <PriceAmount> $ 30</PriceAmount>
+              </Price>
+            </Product>
+
+            <Hr />
+
+            <Product>
+              <ProductDetail>
+                <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
+                {/* <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" /> */}
+                <Detail>
+                  <ProductName>
+                    <b>ProductName: </b>HAKURA T-SHIRT
+                  </ProductName>
+                  <ProductID>
+                    <b>ID:</b>93813718293
+                  </ProductID>
+                  <ProductColor color="gray"></ProductColor>
+                  <ProductSize>
+                    <b>Size: </b>M
+                  </ProductSize>
+                </Detail>
+              </ProductDetail>
+
+              <Price>
+                <AddPriceContainer>
+                  <Remove />
+                  <PriceDisplay>2</PriceDisplay>
+                  <Add />
+                </AddPriceContainer>
+
+                <PriceAmount> $ 30</PriceAmount>
+              </Price>
+            </Product>
           </Info>
+
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
