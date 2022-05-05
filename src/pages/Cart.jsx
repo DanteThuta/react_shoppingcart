@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 34-px;
+  font-size: 34px;
   text-align: center;
   margin-bottom: 30px;
 `;
@@ -74,6 +74,7 @@ const Product = styled.div`
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  justify-content: space-evenly;
 `;
 
 const Image = styled.img`

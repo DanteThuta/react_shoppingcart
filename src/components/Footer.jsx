@@ -7,10 +7,12 @@ import {
   Phone,
   Room,
 } from "@material-ui/icons";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
   background-color: #f5fbfd;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 // Left Section
@@ -22,6 +24,7 @@ const Left = styled.div`
 const Logo = styled.h1`
   font-size: 40px;
   margin-bottom: 10px;
+  ${mobile({ textAlign: "center" })}
 `;
 
 const Desc = styled.p`
@@ -50,6 +53,7 @@ const SocialIcon = styled.div`
 // Center Section
 const Center = styled.div`
   flex: 1;
+  ${mobile({ display: "none" })}
 `;
 
 const CTitle = styled.h1`
@@ -77,6 +81,7 @@ const ListItem = styled.li`
 // Right Section
 const Right = styled.div`
   flex: 1;
+  ${mobile({ alignItems: "center", backgroundColor: "#aec6fc" })}
 `;
 
 const RTitle = styled.h1`

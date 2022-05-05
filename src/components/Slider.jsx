@@ -5,6 +5,7 @@ import HomeImage from "../img/shopping.png";
 
 //import Data
 import { sliderItems } from "../data";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -12,6 +13,7 @@ const Container = styled.div`
   /* background-color: coral; */
   display: flex;
   position: relative;
+  ${mobile({ display: "none" })}
 `;
 
 const Arrow = styled.div`

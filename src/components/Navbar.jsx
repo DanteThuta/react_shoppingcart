@@ -6,12 +6,14 @@ import {
   ShoppingCartOutlined,
   ArrowDropDownOutlined,
 } from "@material-ui/icons";
+import { mobile } from "../responsive";
 
 function Navbar() {
   const Container = styled.div`
     background-color: black;
     height: 60px;
     color: white;
+    ${mobile({ backgroundColor: "red" })}
   `;
 
   const Wrapper = styled.div`
@@ -20,6 +22,7 @@ function Navbar() {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    ${mobile({ padding: "10px 10px" })}
   `;
 
   const Left = styled.div`
@@ -35,6 +38,7 @@ function Navbar() {
     .arrow {
       cursor: pointer;
     }
+    ${mobile({ display: "none" })}
   `;
 
   const Center = styled.div`
@@ -47,6 +51,7 @@ function Navbar() {
     .logo {
       font-size: 30px;
       font-weight: bold;
+      text-align: center;
     }
   `;
 
@@ -66,6 +71,8 @@ function Navbar() {
       outline: 0;
       /* border-radius: 30px; */
     }
+
+    ${mobile({ width: "60px" })}
   `;
 
   const Right = styled.div`
@@ -77,12 +84,14 @@ function Navbar() {
     justify-content: space-between;
     flex: 1;
     padding: 0 10px;
+
+    ${mobile({ flex: "2" })}
   `;
 
   const MenuItem = styled.div`
     font-size: 20px;
-
     cursor: pointer;
+    ${mobile({ fontSize: "15px" })}
   `;
 
   return (
@@ -93,13 +102,13 @@ function Navbar() {
           <ArrowDropDownOutlined className="arrow"></ArrowDropDownOutlined>
         </Left>
         <Center>
-          <div className="logo">React</div>
           <SearchContainer>
             <input type="text" className="input" />
             <MenuItem>
               <SearchOutlined></SearchOutlined>
             </MenuItem>
           </SearchContainer>
+          <div className="logo">React</div>
         </Center>
         <Right>
           <MenuItem>Register</MenuItem>

@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 const ImgContainer = styled.div`
   flex: 1;
   margin-top: 20px;
+  margin-left: 40px;
 `;
 const Image = styled.img`
   width: 400px;
