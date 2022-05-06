@@ -4,22 +4,26 @@ import Navbar from "../components/Navbar";
 import Annoucement from "../components/Announcement";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   display: flex;
   padding: 50px;
+  ${mobile({ flexDirection: "column", padding: "25px" })}
 `;
 
 const ImgContainer = styled.div`
   flex: 1;
   margin-top: 20px;
   margin-left: 40px;
+  ${mobile({ marginLeft: "0px" })}
 `;
 const Image = styled.img`
-  width: 400px;
+  width: 300px;
   height: 60vh;
+  ${mobile({ height: "40vh" })}
 `;
 const InfoContainer = styled.div`
   padding: 20px;

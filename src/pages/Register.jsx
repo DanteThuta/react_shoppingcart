@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
@@ -20,6 +21,7 @@ const Wrapper = styled.div`
   width: 50%;
   background-color: white;
   padding: 15px 10px;
+  ${mobile({ width: "90%" })}
 `;
 
 const Title = styled.h1`
@@ -42,10 +44,12 @@ const Input = styled.input`
   ::placeholder {
     color: teal;
   }
+  ${mobile({ minWidth: "90%" })}
 `;
 const Agreement = styled.span`
   font-size: 18px;
   margin: 15px 10px;
+  ${mobile({ fontSize: "15px" })}
 `;
 const Button = styled.button`
   padding: 10px 15px;

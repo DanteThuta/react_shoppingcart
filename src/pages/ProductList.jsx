@@ -5,11 +5,13 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Footer from "../components/Footer";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column", justifyContent: "center" })}
 `;
 
 const Title = styled.div`
@@ -31,7 +33,7 @@ const FilterText = styled.span`
 const Select = styled.select`
   margin: 10px;
   padding: 10px;
-  /* border-radius: 10px; */
+  ${mobile({ padding: "5px" })}/* border-radius: 10px; */
 `;
 const Option = styled.option``;
 

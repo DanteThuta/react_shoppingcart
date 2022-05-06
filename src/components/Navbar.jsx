@@ -52,6 +52,7 @@ function Navbar() {
       font-size: 30px;
       font-weight: bold;
       text-align: center;
+      ${mobile({ marginBottom: "5px" })}
     }
   `;
 
@@ -92,6 +93,14 @@ function Navbar() {
     font-size: 20px;
     cursor: pointer;
     ${mobile({ fontSize: "15px" })}
+
+    .pagelist {
+      background-color: black;
+      color: white;
+      border: 0;
+      font-size: 20px;
+      font-family: "Oswald", sans-serif;
+    }
   `;
 
   return (
@@ -102,17 +111,23 @@ function Navbar() {
           <ArrowDropDownOutlined className="arrow"></ArrowDropDownOutlined>
         </Left>
         <Center>
+          <div className="logo">React</div>
           <SearchContainer>
             <input type="text" className="input" />
             <MenuItem>
               <SearchOutlined></SearchOutlined>
             </MenuItem>
           </SearchContainer>
-          <div className="logo">React</div>
         </Center>
         <Right>
           <MenuItem>Register</MenuItem>
-          <MenuItem>Login</MenuItem>
+          <MenuItem>
+            <select className="pagelist">
+              <option value="">Product</option>
+              <option value="">ProductList</option>
+              <option value="">Cart</option>
+            </select>
+          </MenuItem>
           <MenuItem>
             <ShoppingCartOutlined></ShoppingCartOutlined>
           </MenuItem>

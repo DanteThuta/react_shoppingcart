@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 
 import Footer from "../components/Footer";
 import { Add, Remove } from "@material-ui/icons";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 
@@ -25,7 +26,7 @@ const Top = styled.div`
 `;
 
 const TopButton = styled.button`
-  padding: 10px 15px;
+  padding: 15px 15px;
   border: 2px solid teal;
 
   border: ${(props) => props.type === "confirm" && "filled"};
@@ -38,7 +39,9 @@ const TopButton = styled.button`
   }
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+  ${mobile({ display: "none" })}
+`;
 
 const TopText = styled.span`
   margin: 5px 10px;
@@ -54,6 +57,7 @@ const Bottom = styled.div`
   justify-content: space-between;
 
   padding: 20px 0;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`
@@ -69,6 +73,7 @@ const Product = styled.div`
   display: flex;
 
   justify-content: space-between;
+  ${mobile({ flexDirection: "column", marginBottom: "20px" })}
 `;
 
 const ProductDetail = styled.div`
@@ -79,6 +84,7 @@ const ProductDetail = styled.div`
 
 const Image = styled.img`
   width: 200px;
+  ${mobile({ width: "150px" })}
 `;
 
 const Detail = styled.div`
@@ -89,6 +95,7 @@ const Detail = styled.div`
   margin-top: 25px;
 
   margin-left: 35px;
+  /* ${mobile({ marginLeft: "0px" })} */
 `;
 
 const ProductName = styled.span``;
@@ -153,6 +160,7 @@ const Summary = styled.div`
   border: 0.5px solid lightgray;
 
   height: 60vh;
+  padding: 15px;
 
   display: flex;
   justify-content: center;
@@ -178,11 +186,13 @@ const SummaryText = styled.span``;
 const SummaryPrice = styled.span``;
 
 const SummaryButton = styled.button`
-  padding: 10px 15px;
+  padding: 15px 20px;
+  letter-spacing: 3px;
   /* width: 100%; */
 
   margin: 5px auto;
   background-color: black;
+  font-family: "Oswald", sans-serif;
   color: white;
   border: 0;
   border-radius: 10px;

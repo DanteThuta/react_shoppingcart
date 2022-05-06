@@ -19,6 +19,7 @@ const Container = styled.div`
 const Left = styled.div`
   flex: 1;
   padding: 15px;
+  ${mobile({ margin: "20px" })}
 `;
 
 const Logo = styled.h1`
@@ -81,12 +82,16 @@ const ListItem = styled.li`
 // Right Section
 const Right = styled.div`
   flex: 1;
-  ${mobile({ alignItems: "center", backgroundColor: "#aec6fc" })}
+  ${mobile({
+    justifyContent: "center",
+    backgroundColor: "#aec6fc",
+  })}
 `;
 
 const RTitle = styled.h1`
   font-size: 40px;
   padding: 15px;
+  ${mobile({ padding: "0px 15px" })}
 `;
 
 const ContactItem = styled.div`
